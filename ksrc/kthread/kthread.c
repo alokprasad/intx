@@ -9,13 +9,10 @@ struct task_struct *task;
 
 int my_thread(void *data){
 
-	allow_signal(SIGKILL);
 	while(1) {
 		
-		//ssleep(1);
+		ssleep(1);
 		pr_err("Printing in Loop every sec in kernel thread\n");
-		if (kthread_should_stop()) break;
-		if (signal_pending(task)) { printk("SIGKILL called \n" );break;}
 	}
 	return 0;
 }
