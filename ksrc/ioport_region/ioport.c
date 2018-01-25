@@ -17,7 +17,7 @@ int memIO_init (void) {
 		return (Major);
 	}
 	printk (" The Major number of the device is %d \n", Major);
-	result = check_region (start, length);
+	result = request_region (start, length,"memIO_device");
 	/* Probes the given address. If the address is already in use, the function will return an
 	 * error, otherwise it will allocate the address range for the device. */
 	if (result < 0)
@@ -25,7 +25,7 @@ int memIO_init (void) {
 		printk ("Allocation for I/O memory range is failed: Try other range\n");
 		return (result);
 	}
-	request_region (start, length, "memIO_device");
+	//request_region (start, length, "memIO_device");
 	return 0;
 }
 
