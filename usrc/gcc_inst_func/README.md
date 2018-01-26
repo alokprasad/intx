@@ -1,3 +1,7 @@
+-g = Debugging information with line.
+-finstrument-functions = for entry and exit
+
+Usage:
 root@embsys-VirtualBox:~/github/intx/usrc/gcc_inst_func# gcc  -g -finstrument-functions  gcc_profiling.c
 root@embsys-VirtualBox:~/github/intx/usrc/gcc_inst_func# ./a.out
 Function Entry : 0x400696 0x7f03592f1830
