@@ -25,7 +25,7 @@ static int __init example_init(void)
 {
 
 	//Create entry in /sys/kernel/test
-		sysfs_create_file(kernel_kobj, &test_attribute.attr);
+	sysfs_create_file(kernel_kobj, &test_attribute.attr);
 	
 	return 0;
 }
