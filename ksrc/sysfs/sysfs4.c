@@ -4,21 +4,21 @@
 
 int temp = 10;
 
-// show function should be informa __ATTR_RO/RW(name) --->   .show = _name##_show
+
 static ssize_t test_show(struct kobject *kobj, struct kobj_attribute *attr, char *buf)
 {
 	return sprintf(buf, "%d\n", temp);
 }
 
-// show function should be informa __ATTR_RO/RW(name) --->   .store = _name##_store
-static ssize_t test_store(struct kobject *kobj, struct kobj_attribute *attr, char *buf , size_t len)
+
+static ssize_t test_store(struct kobject *kobj, struct kobj_attribute *attr, const char *buf , size_t len)
 {
     sscanf(buf,"%d",&temp);
     return len;
 }
 
 
-static const struct kobj_attribute test_attribute = __ATTR_RW(test);
+static const struct kobj_attribute test_attribute = __ATTR(test_attribute,0644, test_show, test_store);
 
  
 static int __init example_init(void)
