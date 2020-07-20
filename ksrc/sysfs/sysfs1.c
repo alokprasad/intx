@@ -10,15 +10,15 @@ struct my_attr {
 };
 
 static struct my_attr my_first = {
-    .attr.name="first"
-    //.attr.mode = 0644,
-    //.value = 1,
+    .attr.name="first",
+    .attr.mode = 0644,
+    .value = 1,
 };
 
 static struct my_attr my_second = {
-    .attr.name="second"
-    //.attr.mode = 0644,
-    //.value = 2,
+    .attr.name="second",
+    .attr.mode = 0644,
+    .value = 2,
 };
 
 static struct attribute * myattr[] = {
